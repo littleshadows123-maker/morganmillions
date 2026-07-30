@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,800;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=2026073011">
+<link rel="stylesheet" href="assets/css/style.css?v=2026073012">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -34,10 +34,42 @@
     <span class="brand__name">Morgan Millions</span>
   </a>
   <nav class="nav__links" id="nav-links" data-open="false" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="program.html">Program</a>
-      <a href="stallions.html">Stallions</a>
-      <a href="event.html" aria-current="page">Event</a>
+      <a class="nav__link" href="index.html">Home</a>
+      <div class="nav__group" data-nav-group>
+        <a class="nav__link nav__link--parent" href="program.html" aria-haspopup="true" aria-expanded="false">Program<span class="nav__caret" aria-hidden="true">▾</span></a>
+        <div class="subnav" role="menu" aria-label="Program sections">
+          <a class="subnav__item" href="program.html">
+            <span class="subnav__label">Overview</span>
+            <span class="subnav__desc">What Morgan Millions is</span>
+          </a>
+          <a class="subnav__item" href="classes.html">
+            <span class="subnav__label">Classes &amp; Purse</span>
+            <span class="subnav__desc">$1M base, 7 classes</span>
+          </a>
+          <a class="subnav__item" href="vault.html">
+            <span class="subnav__label">The Vault</span>
+            <span class="subnav__desc">Vaulted &middot; Reserve &middot; Minted</span>
+          </a>
+          <a class="subnav__item" href="crown.html">
+            <span class="subnav__label">The Crown Purse</span>
+            <span class="subnav__desc">$105K bonus &middot; 14 placings</span>
+          </a>
+          <a class="subnav__item" href="bridge.html">
+            <span class="subnav__label">The Bridge</span>
+            <span class="subnav__desc">2027–2030 window</span>
+          </a>
+          <a class="subnav__item" href="nomination.html">
+            <span class="subnav__label">Nomination &amp; Fees</span>
+            <span class="subnav__desc">How to enter</span>
+          </a>
+          <a class="subnav__item" href="governance.html">
+            <span class="subnav__label">Governance</span>
+            <span class="subnav__desc">501(c)(3) &middot; board</span>
+          </a>
+        </div>
+      </div>
+      <a class="nav__link" href="stallions.html">Stallions</a>
+      <a class="nav__link" href="event.html" aria-current="page">Event</a>
     <button class="pill pill--ghost nav__cta-mobile" type="button" data-placeholder="Coming Soon">Watch Live</button>
   </nav>
   <button class="pill nav__cta" type="button" data-placeholder="Coming Soon">Watch Live</button>
@@ -204,6 +236,6 @@
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=2026073011" defer></script>
+<script src="assets/js/site.js?v=2026073012" defer></script>
 </body>
 </html>
