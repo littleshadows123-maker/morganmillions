@@ -151,9 +151,72 @@
         }
       }
 
+      // Reset share button label when opening
+      var shareLabel = modal.querySelector("[data-modal-share-label]");
+      if (shareLabel) shareLabel.textContent = "Share profile";
+      var shareBtn = modal.querySelector("[data-modal-share]");
+      if (shareBtn) shareBtn.classList.remove("is-copied");
+
       // Focus the close button for keyboard users
       var close = modal.querySelector(".stallion-modal__close");
       if (close) setTimeout(function () { close.focus(); }, 60);
+    }
+
+    /* ---------- Share profile ---------- */
+    var shareBtn = modal.querySelector("[data-modal-share]");
+    if (shareBtn) {
+      shareBtn.addEventListener("click", function () {
+        if (!currentSeat) return;
+        var name = (modal.querySelector("[data-modal-name]") || {}).textContent || "";
+        var url = window.location.origin + window.location.pathname + "#seat-" + currentSeat;
+        var shareData = {
+          title: name ? name + " · Morgan Millions" : "Morgan Millions Vaulted Sire",
+          text: name ? "Vaulted Sire: " + name : "Morgan Millions Vaulted Sire",
+          url: url
+        };
+        var label = modal.querySelector("[data-modal-share-label]");
+
+        function showCopied() {
+          if (label) label.textContent = "Link copied";
+          shareBtn.classList.add("is-copied");
+          setTimeout(function () {
+            if (label) label.textContent = "Share profile";
+            shareBtn.classList.remove("is-copied");
+          }, 1800);
+        }
+
+        function fallbackCopy() {
+          try {
+            var ta = document.createElement("textarea");
+            ta.value = url;
+            ta.setAttribute("readonly", "");
+            ta.style.position = "absolute";
+            ta.style.left = "-9999px";
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand("copy");
+            document.body.removeChild(ta);
+            showCopied();
+          } catch (err) {
+            if (label) label.textContent = url;
+          }
+        }
+
+        if (navigator.share) {
+          navigator.share(shareData).catch(function () {
+            // User cancelled or unsupported — fall through to clipboard
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(url).then(showCopied).catch(fallbackCopy);
+            } else {
+              fallbackCopy();
+            }
+          });
+        } else if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(showCopied).catch(fallbackCopy);
+        } else {
+          fallbackCopy();
+        }
+      });
     }
 
     function closeModal(opts) {

@@ -1208,6 +1208,43 @@ table.classes tfoot td.purse { color: var(--brass-light); }
   line-height: 1.55;
 }
 
+/* Share button in modal */
+.stallion-modal__actions {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(197, 165, 114, 0.18);
+}
+.stallion-modal__share {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.25rem;
+  background: transparent;
+  border: 1px solid var(--brass);
+  color: var(--brass);
+  font-family: var(--body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+.stallion-modal__share:hover,
+.stallion-modal__share:focus-visible {
+  background: var(--brass);
+  color: var(--ink);
+  outline: none;
+}
+.stallion-modal__share:focus-visible {
+  box-shadow: 0 0 0 3px rgba(197, 165, 114, 0.35);
+}
+.stallion-modal__share.is-copied {
+  background: var(--brass);
+  color: var(--ink);
+}
+.stallion-modal__share svg { flex-shrink: 0; }
+
 /* Body lock when modal open */
 body.modal-open { overflow: hidden; }
 
