@@ -4,10 +4,10 @@
    ========================================================================== */
 
 :root {
-  --green-900: #1A0709;
-  --green-800: #2A0D11;
-  --green-700: #3B1519;
-  --green-600: #4A1B21;
+  --green-900: #0F1F30;
+  --green-800: #1E3550;
+  --green-700: #3C5878;
+  --green-600: #4E6A8A;
   --cream: #F0E8D6;
   --cream-dim: #DBD1BA;
   --brass: #C89B3F;
@@ -123,7 +123,7 @@ p:last-child { margin-bottom: 0; }
   border-bottom: 1px solid transparent;
 }
 .nav--solid {
-  background: rgba(7, 26, 20, 0.94);
+  background: rgba(15, 31, 48, 0.94);
   backdrop-filter: blur(10px);
   border-bottom-color: var(--hairline);
   padding-block: 0.8rem;
