@@ -282,7 +282,7 @@ p:last-child { margin-bottom: 0; }
   object-fit: cover;
 }
 .hero__video {
-  filter: saturate(1.04) brightness(0.62);
+  filter: saturate(1.04) brightness(0.68);
   will-change: transform, opacity;
 }
 /* Ken Burns cross-fade: 4 stacked images, each visible for 8s of a 32s cycle,
