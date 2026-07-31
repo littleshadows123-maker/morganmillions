@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { font-family: -apple-system, sans-serif; background: #F7F1E8; margin: 0; padding: 40px; color: #222; }
+.demo { max-width: 900px; margin: 0 auto; }
+h2 { font-family: Georgia, serif; font-size: 28px; margin-top: 48px; margin-bottom: 8px; color: #3C5878; }
+.hint { color: #666; font-size: 14px; margin-bottom: 24px; }
+.nav {
+  background: #1a2438; color: white; padding: 18px 32px; display: flex; align-items: center;
+  border-radius: 4px; gap: 32px; position: relative;
+}
+.brand { font-family: Georgia, serif; letter-spacing: 0.15em; font-size: 15px; }
+.nav a { color: white; text-decoration: none; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; }
+.nav a.active { color: #C8A25A; }
+.nav a.has-caret::after { content: " ▾"; opacity: 0.6; font-size: 10px; }
+.watch { margin-left: auto; background: white; color: #1a2438; padding: 10px 20px; border-radius: 24px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+.dropdown {
+  position: absolute; top: 60px; left: 220px; background: white; color: #222;
+  min-width: 280px; box-shadow: 0 12px 40px rgba(0,0,0,0.15); border-radius: 6px; padding: 12px 0;
+}
+.dropdown a {
+  display: block; padding: 12px 24px; color: #222 !important; text-transform: none !important;
+  font-size: 14px !important; letter-spacing: 0 !important; border-bottom: 1px solid #eee;
+}
+.dropdown a:last-child { border-bottom: 0; }
+.dropdown a:hover { background: #F7F1E8; }
+.dropdown .desc { color: #888; font-size: 12px; margin-top: 3px; }
+.arrow { color: #C8A25A; font-size: 16px; }
+</style>
+</head>
+<body>
+<div class="demo">
+
+<h2>What a dropdown looks like</h2>
+<p class="hint">Hover on "Program" in the top nav — a panel drops down with clickable items. Each item takes you somewhere specific.</p>
+
+<div class="nav">
+  <span class="brand">MM &nbsp; MORGAN MILLIONS</span>
+  <a href="#">HOME</a>
+  <a href="#" class="active has-caret">PROGRAM</a>
+  <a href="#">STALLIONS</a>
+  <a href="#">EVENT</a>
+  <span class="watch">WATCH LIVE</span>
+
+  <div class="dropdown">
+    <a href="#">Overview <div class="desc">What Morgan Millions is</div></a>
+    <a href="#">Classes & Purse <div class="desc">$1M base, 7 classes, Crown Purse</div></a>
+    <a href="#">The Vault <div class="desc">Vaulted / Reserve / Minted / open seats</div></a>
+    <a href="#">The Bridge <div class="desc">2027–2030 back-nomination window</div></a>
+    <a href="#">Nomination & Fees <div class="desc">How to get in, what it costs</div></a>
+    <a href="#">Governance <div class="desc">Board, 501(c)(3), decision rights</div></a>
+  </div>
+</div>
+
+<p style="margin-top: 300px; color:#666; font-size:14px;">
+When the visitor clicks any item, they either <b>jump to a section on the Program page</b> (fast, one long page) or <b>load a new page</b> (each topic gets more room to breathe).
+</p>
+
+</div>
+</body>
+</html>
