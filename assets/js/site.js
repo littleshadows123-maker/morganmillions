@@ -283,4 +283,24 @@
       }
     });
   }
+
+  // Hero video: respect prefers-reduced-motion
+  var heroVideo = document.querySelector(".hero__video");
+  if (heroVideo) {
+    var mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var applyMotionPref = function () {
+      if (mq.matches) {
+        heroVideo.pause();
+        try { heroVideo.currentTime = 0; } catch (e) {}
+      } else {
+        heroVideo.play().catch(function () { /* autoplay blocked — ignore */ });
+      }
+    };
+    applyMotionPref();
+    if (mq.addEventListener) {
+      mq.addEventListener("change", applyMotionPref);
+    } else if (mq.addListener) {
+      mq.addListener(applyMotionPref);
+    }
+  }
 })();
