@@ -57,7 +57,7 @@ def head(title, desc, page):
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="stylesheet" href="assets/css/style.css?v=2026080126">
+<link rel="stylesheet" href="assets/css/style.css?v=2026080127">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -156,7 +156,7 @@ FOOTER = '''</main>
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=2026080126" defer></script>
+<script src="assets/js/site.js?v=2026080127" defer></script>
 </body>
 </html>'''
 
@@ -286,7 +286,7 @@ CLASSES_SECTION = f'''
     <h2 class="h-section reveal">Seven classes. Two stakes groups. One million dollars.</h2>
     <div class="table-wrap reveal" style="margin-top:3rem">
       <table class="classes">
-        <caption>Target purse allocation &mdash; inaugural event, October 2027. Funded by pooled nominations, Vault seats, sponsors, and the Founders&rsquo; Circle. Declared purse pays out in full.</caption>
+        <caption>Target purse allocation &mdash; inaugural event, October 2027. Funded by pooled nominations, Vault seats, and sponsors. Declared purse pays out in full.</caption>
         <thead>
           <tr><th scope="col">Class</th><th scope="col">Stakes group</th><th scope="col" style="text-align:right">Purse</th></tr>
         </thead>
@@ -422,7 +422,7 @@ program = (
     <h2 class="h-section reveal">One event. One million. One breed.</h2>
     <div class="reveal" style="margin-top:1.75rem">
       <p class="lede">Morgan Millions is a stakes program built around a single annual event &mdash; seven classes, a $1,000,000 target purse, and a $105,000 Crown Purse paid to Stallion Ticket holders on top of every placing.</p>
-      <p style="margin-top:1rem">Morgan Millions carries a target purse of $1,000,000 plus a $105,000 Crown &mdash; funded each year by pooled nominations, Vault seats, sponsors, and the Founders&rsquo; Circle. The program takes no percentage of the purse; the declared purse pays out in full.</p>
+      <p style="margin-top:1rem">Morgan Millions carries a target purse of $1,000,000 plus a $105,000 Crown &mdash; funded each year by pooled nominations, Vault seats, and sponsors. The program takes no percentage of the purse; the declared purse pays out in full.</p>
     </div>
   </div>
 </section>
