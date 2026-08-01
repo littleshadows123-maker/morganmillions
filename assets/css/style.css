@@ -1091,7 +1091,7 @@ table.classes tfoot td.purse.crown-purse {
 
 /* Portrait-aspect hero (used on stallions page for tall imagery) */
 .pagehero--portrait {
-  min-height: 100svh;
+  min-height: 88svh;
   align-items: end;
 }
 .pagehero--portrait .pagehero__media img {
