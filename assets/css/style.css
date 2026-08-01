@@ -1096,7 +1096,7 @@ table.classes tfoot td.purse.crown-purse {
 }
 .pagehero--portrait .pagehero__media img {
   object-fit: cover;
-  object-position: center top;
+  object-position: center bottom;
 }
 .pagehero--portrait .pagehero__inner {
   padding: 8rem 0 clamp(3rem, 6vw, 5rem);
