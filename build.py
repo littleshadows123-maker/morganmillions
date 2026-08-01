@@ -57,7 +57,7 @@ def head(title, desc, page):
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="stylesheet" href="assets/css/style.css?v=2026080128">
+<link rel="stylesheet" href="assets/css/style.css?v=2026080129">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -156,7 +156,7 @@ FOOTER = '''</main>
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=2026080128" defer></script>
+<script src="assets/js/site.js?v=2026080129" defer></script>
 </body>
 </html>'''
 
@@ -261,8 +261,8 @@ rows = "\n".join(
         </tr>''' for name, div, purse in CLASSES)
 
 # Reusable page hero — accepts eyebrow, title, subline
-def pagehero(eyebrow, title, sub, image="assets/img/hero-a-pasture.jpg",
-             alt="A bay Morgan stallion standing at attention on a Kentucky pasture at golden hour"):
+def pagehero(eyebrow, title, sub, image="assets/img/hero-chestnut-portrait-v2.jpg",
+             alt="A chestnut Morgan stallion in showring bridle, high-set neck arched, long flowing tail"):
     return f'''<section class="pagehero">
   <div class="pagehero__media">
     <img src="{image}" alt="{alt}" fetchpriority="high">
