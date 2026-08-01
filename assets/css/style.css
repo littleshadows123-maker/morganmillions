@@ -1604,7 +1604,14 @@ body.modal-open { overflow: hidden; }
 /* ============================================================
    Stallion page hero — Financial Ticker / Stakes Ledger
    ============================================================ */
+/* Force nav solid when a stallion-hero is on the page */
+body:has(.stallion-hero) .nav {
+  background: rgba(5, 9, 18, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom-color: rgba(200,155,63,0.15);
+}
 .stallion-hero {
+  padding-top: 5rem;
   --sh-bg: #050912;
   --sh-bg-2: #020509;
   --sh-brass: #C89B3F;
