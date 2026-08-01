@@ -851,17 +851,11 @@ table.classes tfoot td.purse.crown-purse {
 .card__portrait {
   position: relative;
   aspect-ratio: 16 / 9;
-  background-size: cover;
+  background-size: contain;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-color: #0F0507;
+  background-color: var(--green-900);
   transition: transform 0.9s var(--ease);
-}
-.card__portrait::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(26,7,9,0.35) 0%, rgba(26,7,9,0) 30%, rgba(26,7,9,0) 60%, rgba(26,7,9,0.85) 100%);
-  pointer-events: none;
 }
 .card__portrait--empty {
   background: repeating-linear-gradient(45deg,
