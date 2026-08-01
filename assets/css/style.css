@@ -1088,6 +1088,19 @@ table.classes tfoot td.purse.crown-purse {
   filter: saturate(1.05) brightness(0.72);
   animation: slow-zoom 44s ease-in-out infinite alternate;
 }
+
+/* Portrait-aspect hero (used on stallions page for tall imagery) */
+.pagehero--portrait {
+  min-height: 100svh;
+  align-items: end;
+}
+.pagehero--portrait .pagehero__media img {
+  object-fit: cover;
+  object-position: center top;
+}
+.pagehero--portrait .pagehero__inner {
+  padding: 8rem 0 clamp(3rem, 6vw, 5rem);
+}
 .pagehero__scrim {
   position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(26,7,9,0.78) 0%, rgba(26,7,9,0.32) 45%, rgba(26,7,9,0.94) 100%);
@@ -1216,6 +1229,7 @@ table.classes tfoot td.purse.crown-purse {
   .sponsors__grid { grid-template-columns: 1fr 1fr; }
   .countdown { gap: 0.35rem; }
   .pagehero { min-height: 56svh; }
+  .pagehero--portrait { min-height: 88svh; }
 }
 
 @media (max-width: 420px) {
