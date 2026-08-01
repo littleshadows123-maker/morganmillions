@@ -1202,6 +1202,11 @@ table.classes tfoot td.purse.crown-purse {
      to header-height on scroll and blocks all page content. */
   .nav--solid { backdrop-filter: none; -webkit-backdrop-filter: none; }
 
+  /* Disable reveal-on-scroll animations on mobile. IntersectionObserver
+     misses tall .seats/.statement-stack wrappers (20+ stacked cards),
+     leaving them at opacity:0 forever. Show all content by default. */
+  .reveal { opacity: 1 !important; transform: none !important; }
+
   .split, .founders, .footer__top { grid-template-columns: 1fr; }
   .split--reverse .split__media { order: 0; }
   .cards, .schedule, .deflist--2, .deflist--3 { grid-template-columns: 1fr; }
