@@ -1313,16 +1313,9 @@ table.classes tfoot td.purse.crown-purse {
 
 .stallion-modal__portrait {
   position: relative;
-  background: var(--green-800) center center / cover no-repeat;
+  background: var(--green-900) center center / contain no-repeat;
   min-height: 100%;
   overflow: hidden;
-}
-.stallion-modal__portrait::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(26,7,9,0) 60%, rgba(26,7,9,0.55) 100%);
-  pointer-events: none;
 }
 .stallion-modal__seat {
   position: absolute;
