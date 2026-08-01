@@ -53,11 +53,11 @@ def head(title, desc, page):
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,800;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,800;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500;700&family=Archivo+Black&display=swap" rel="stylesheet">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="stylesheet" href="assets/css/style.css?v=2026080130">
+<link rel="stylesheet" href="assets/css/style.css?v=2026080131">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -156,7 +156,7 @@ FOOTER = '''</main>
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=2026080130" defer></script>
+<script src="assets/js/site.js?v=2026080131" defer></script>
 </body>
 </html>'''
 
@@ -1130,19 +1130,138 @@ stallions = head(
     "The Vaulted Sires program: twenty permanent Morgan stallion seats at $15,000 per year, two Reserve "
     "Seats offered annually at auction, and the Bridge program for Charter Holders.",
     "stallions.html") + f'''
-<section class="pagehero pagehero--portrait">
-  <div class="pagehero__media">
-    <img src="assets/img/hero-bay-mane-eye.jpg" alt="Bay Morgan stallion in soft outdoor light, wind-swept black mane framing a deep, engaged eye" fetchpriority="high">
+<section class="stallion-hero" aria-label="Vaulted Sires Register">
+  <!-- TOP TICKER: seat register -->
+  <div class="sh-ticker">
+    <div class="sh-ticker__label"><span class="sh-live-dot"></span>Live · Seat Register</div>
+    <div class="sh-ticker__inner">
+      <span class="sh-ticker__item"><span class="name">Seat 01</span> <span>MLF Dynamic GCH</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 02</span> <span>Merriehill After Hours GCH</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 03</span> <span>Jus&rsquo; Sayin&rsquo; CH</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 04</span> <span>RWF Gettysburg CH</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 05</span> <span>DJS Bourbon</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 06</span> <span>Get Busy</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 07</span> <span>Extreme Sensation</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 08</span> <span>A Star Is Born</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 09</span> <span>Man In Black</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 10</span> <span>Reserved</span> <span class="stat reserved">· Pending</span></span>
+      <span class="sh-ticker__item"><span class="name">Seats 11–20</span> <span class="stat open">· Open · Auction</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 01</span> <span>MLF Dynamic GCH</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 02</span> <span>Merriehill After Hours GCH</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 03</span> <span>Jus&rsquo; Sayin&rsquo; CH</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 04</span> <span>RWF Gettysburg CH</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 05</span> <span>DJS Bourbon</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 06</span> <span>Get Busy</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 07</span> <span>Extreme Sensation</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 08</span> <span>A Star Is Born</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 09</span> <span>Man In Black</span> <span class="stat filled">· Filled</span></span>
+      <span class="sh-ticker__item"><span class="name">Seat 10</span> <span>Reserved</span> <span class="stat reserved">· Pending</span></span>
+      <span class="sh-ticker__item"><span class="name">Seats 11–20</span> <span class="stat open">· Open · Auction</span></span>
+    </div>
   </div>
-  <div class="pagehero__scrim"></div>
-  <div class="pagehero__inner">
-    <div class="wrap">
-      <p class="eyebrow">Vaulted Sires</p>
-      <h1 class="h-page">Twenty Sires. One Vault.</h1>
-      <p class="pagehero__sub">The stallions whose foals compete for a million dollars.</p>
+
+  <div class="stallion-hero__main">
+    <div class="stallion-hero__grid">
+      <div>
+        <div class="sh-badge-row">
+          <span class="sh-badge"><span class="sh-live-dot sh-live-dot--green"></span>Market Open</span>
+          <span class="sh-badge">Cycle · 2027</span>
+          <span class="sh-badge sh-badge--alert">11 Seats Remaining</span>
+        </div>
+        <h1 class="sh-title">
+          Twenty sires.<br><em>One vault.</em>
+          <span class="rip">The Morgan Stakes Ledger</span>
+        </h1>
+        <p class="sh-lede">
+          Twenty permanent seats. $15,000 a year, in perpetuity. Every foal by a Vaulted sire is eligible to win a share of a $1,000,000 target purse &mdash; and a 5% nominator fee that pays for the sire&rsquo;s entire career.
+        </p>
+        <div class="sh-cta-row">
+          <a class="sh-btn sh-btn--primary" href="nominate.html">Claim a Seat &rarr;</a>
+          <a class="sh-btn" href="#vault">View Full Register</a>
+        </div>
+      </div>
+
+      <div class="sh-terminal">
+        <div class="sh-cd" aria-label="Countdown to inaugural event">
+          <div class="sh-cd__head">
+            <span>Countdown · Oct 6, 2027</span>
+            <span class="sh-live-dot"></span>
+          </div>
+          <div class="sh-cd__row">
+            <div class="sh-cd-unit"><span class="n" data-sh-cd="days">--</span><span class="l">Days</span></div>
+            <div class="sh-cd-unit"><span class="n" data-sh-cd="hours">--</span><span class="l">Hrs</span></div>
+            <div class="sh-cd-unit"><span class="n" data-sh-cd="mins">--</span><span class="l">Min</span></div>
+            <div class="sh-cd-unit secs"><span class="n" data-sh-cd="secs">--</span><span class="l">Sec</span></div>
+          </div>
+        </div>
+        <div class="sh-term-head">
+          <span>Vault Occupancy</span>
+          <span class="filled">09 / 20 Filled</span>
+        </div>
+        <div class="sh-seat-bar" aria-hidden="true">
+          <div class="sh-seat-cell filled"></div><div class="sh-seat-cell filled"></div><div class="sh-seat-cell filled"></div><div class="sh-seat-cell filled"></div><div class="sh-seat-cell filled"></div><div class="sh-seat-cell filled"></div><div class="sh-seat-cell filled"></div><div class="sh-seat-cell filled"></div><div class="sh-seat-cell filled"></div><div class="sh-seat-cell reserved"></div><div class="sh-seat-cell open"></div><div class="sh-seat-cell open"></div><div class="sh-seat-cell open"></div><div class="sh-seat-cell open"></div><div class="sh-seat-cell open"></div><div class="sh-seat-cell open"></div><div class="sh-seat-cell open"></div><div class="sh-seat-cell open"></div><div class="sh-seat-cell open"></div><div class="sh-seat-cell open"></div>
+        </div>
+        <div class="sh-seat-legend">
+          <span><span class="sh-leg f"></span>Filled · 9</span>
+          <span><span class="sh-leg r"></span>Pending · 1</span>
+          <span><span class="sh-leg o"></span>Open · 10</span>
+        </div>
+        <div class="sh-data">
+          <div class="sh-data-cell"><span class="k">Target Purse</span><span class="v">$1,000,000</span></div>
+          <div class="sh-data-cell"><span class="k">Crown Purse</span><span class="v">$105,000</span></div>
+          <div class="sh-data-cell"><span class="k">Seat Rate / Yr</span><span class="v green">$15,000</span></div>
+          <div class="sh-data-cell"><span class="k">Nominator Fee</span><span class="v green">5%</span></div>
+          <div class="sh-data-cell"><span class="k">Inaugural</span><span class="v">Oct 6&ndash;8, 2027</span></div>
+          <div class="sh-data-cell"><span class="k">Venue</span><span class="v small">OKC · Pending</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM TICKER: payout wire -->
+  <div class="sh-ticker sh-ticker--bottom">
+    <div class="sh-ticker__label"><span class="sh-live-dot sh-live-dot--green"></span>Payout Wire</div>
+    <div class="sh-ticker__inner">
+      <span class="sh-ticker__item"><span>2YO Champion</span> <span class="money">$100,000</span></span>
+      <span class="sh-ticker__item"><span>2YO Reserve</span> <span class="money">$50,000</span></span>
+      <span class="sh-ticker__item"><span>3-4YO Champion</span> <span class="money">$40,000</span></span>
+      <span class="sh-ticker__item"><span>3-4YO Reserve</span> <span class="money">$20,000</span></span>
+      <span class="sh-ticker__item"><span>Crown Purse / class</span> <span class="money">$15,000</span></span>
+      <span class="sh-ticker__item"><span>Trainers, annual</span> <span class="money">$100,000</span></span>
+      <span class="sh-ticker__item"><span>Nominators, annual</span> <span class="money">$50,000</span></span>
+      <span class="sh-ticker__item"><span>Foal owners, annual</span> <span class="money">$850,000</span></span>
+      <span class="sh-ticker__item"><span>2YO Champion</span> <span class="money">$100,000</span></span>
+      <span class="sh-ticker__item"><span>2YO Reserve</span> <span class="money">$50,000</span></span>
+      <span class="sh-ticker__item"><span>3-4YO Champion</span> <span class="money">$40,000</span></span>
+      <span class="sh-ticker__item"><span>3-4YO Reserve</span> <span class="money">$20,000</span></span>
+      <span class="sh-ticker__item"><span>Crown Purse / class</span> <span class="money">$15,000</span></span>
+      <span class="sh-ticker__item"><span>Trainers, annual</span> <span class="money">$100,000</span></span>
+      <span class="sh-ticker__item"><span>Nominators, annual</span> <span class="money">$50,000</span></span>
+      <span class="sh-ticker__item"><span>Foal owners, annual</span> <span class="money">$850,000</span></span>
     </div>
   </div>
 </section>
+
+<script>
+(function(){{
+  var target = new Date('2027-10-06T00:00:00-05:00').getTime();
+  var d = document.querySelector('[data-sh-cd="days"]');
+  var h = document.querySelector('[data-sh-cd="hours"]');
+  var m = document.querySelector('[data-sh-cd="mins"]');
+  var s = document.querySelector('[data-sh-cd="secs"]');
+  if (!d) return;
+  function pad(n){{ n = Math.max(0, Math.floor(n)); return n < 10 ? '0'+n : ''+n; }}
+  function tick(){{
+    var diff = Math.max(0, target - Date.now());
+    d.textContent = String(Math.floor(diff / 86400000));
+    h.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    m.textContent = pad(Math.floor((diff % 3600000) / 60000));
+    s.textContent = pad(Math.floor((diff % 60000) / 1000));
+  }}
+  tick();
+  setInterval(tick, 1000);
+}})();
+</script>
 
 <section class="earners reveal">
   <div class="earners__intro">
@@ -1174,7 +1293,7 @@ stallions = head(
   </div>
 </section>
 
-<section class="section on-ink">
+<section class="section on-ink" id="vault">
   <div class="wrap">
     <p class="eyebrow">The Vault</p>
     <h2 class="h-section reveal">Seats 01 &ndash; 20</h2>
