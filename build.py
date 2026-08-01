@@ -57,7 +57,7 @@ def head(title, desc, page):
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="stylesheet" href="assets/css/style.css?v=2026080129">
+<link rel="stylesheet" href="assets/css/style.css?v=2026080130">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -156,7 +156,7 @@ FOOTER = '''</main>
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=2026080129" defer></script>
+<script src="assets/js/site.js?v=2026080130" defer></script>
 </body>
 </html>'''
 
@@ -1132,7 +1132,7 @@ stallions = head(
     "stallions.html") + f'''
 <section class="pagehero pagehero--portrait">
   <div class="pagehero__media">
-    <img src="assets/img/hero-c-eye-full.jpg" alt="Close-up portrait of a chestnut Morgan stallion&#39;s head, warm rembrandt lighting highlighting the eye and full face" fetchpriority="high">
+    <img src="assets/img/hero-bay-mane-eye.jpg" alt="Bay Morgan stallion in soft outdoor light, wind-swept black mane framing a deep, engaged eye" fetchpriority="high">
   </div>
   <div class="pagehero__scrim"></div>
   <div class="pagehero__inner">
