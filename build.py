@@ -57,7 +57,7 @@ def head(title, desc, page):
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="stylesheet" href="assets/css/style.css?v=2026080132">
+<link rel="stylesheet" href="assets/css/style.css?v=2026080133">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -156,7 +156,7 @@ FOOTER = '''</main>
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=2026080132" defer></script>
+<script src="assets/js/site.js?v=2026080133" defer></script>
 </body>
 </html>'''
 
