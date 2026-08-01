@@ -1223,16 +1223,10 @@ table.classes tfoot td.purse.crown-purse {
    ========================================================================== */
 .card--stallion.is-clickable {
   cursor: pointer;
-  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
-}
-.card--stallion.is-clickable:hover,
-.card--stallion.is-clickable:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.35);
-  outline: none;
 }
 .card--stallion.is-clickable:focus-visible {
-  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.35), 0 0 0 2px var(--brass);
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
 }
 .card--stallion .card__view {
   display: inline-flex;
