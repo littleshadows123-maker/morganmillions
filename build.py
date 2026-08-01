@@ -57,7 +57,7 @@ def head(title, desc, page):
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="stylesheet" href="assets/css/style.css?v=2026080127">
+<link rel="stylesheet" href="assets/css/style.css?v=2026080128">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -156,7 +156,7 @@ FOOTER = '''</main>
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=2026080127" defer></script>
+<script src="assets/js/site.js?v=2026080128" defer></script>
 </body>
 </html>'''
 
@@ -430,8 +430,7 @@ program = (
 <section class="section on-cream">
   <div class="wrap">
     <p class="eyebrow">Explore the program</p>
-    <h2 class="h-section reveal" style="margin-bottom:clamp(2rem,4vw,3rem)">Six ways in.</h2>
-    <div class="cards reveal">
+    <div class="cards reveal" style="margin-top:clamp(2rem,4vw,3rem)">
       <a class="card card--link" href="classes.html">
         <p class="card__eyebrow">Classes &amp; Purse</p>
         <h3 class="card__title">$1M base, 7 classes</h3>
