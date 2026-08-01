@@ -859,7 +859,7 @@ table.classes tfoot td.purse.crown-purse {
     0 0 0 1px rgba(200, 155, 63, 0.18);
   transform: translateY(-4px) scale(1.012);
 }
-.card--stallion:hover .card__portrait { transform: scale(1.02); }
+/* Hover transform now applied to .card__portrait-sharp instead — see below. */
 .card--stallion:active {
   transform: translateY(-2px) scale(1.006);
   transition-duration: 0.15s;
@@ -877,7 +877,14 @@ table.classes tfoot td.purse.crown-purse {
   }
 }
 
-/* Full-bleed portrait header */
+/* Full-bleed portrait header — cinematic blurred backdrop fills letterbox pillars.
+   Layer order (bottom → top):
+   1. .card__portrait background-color (green-900) — fallback if backdrop img fails
+   2. .card__portrait-blur img — blurred, darkened same-photo backdrop (cover, fills frame)
+   3. .card__portrait background-image — sharp photo (contain, centered subject) — painted
+      by browser AFTER the img element per stacking order (block-level bg paints last within
+      a positioned parent when children are also positioned; we rely on the parent's inline
+      style to draw on top of the absolutely-positioned img child below). */
 .card__portrait {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -886,7 +893,40 @@ table.classes tfoot td.purse.crown-purse {
   background-repeat: no-repeat;
   background-color: var(--green-900);
   transition: transform 0.9s var(--ease);
+  overflow: hidden;
 }
+/* Blurred same-photo backdrop — fills letterbox pillars with the horse's own colors. */
+.card__portrait-blur {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  /* Stronger blur + saturation so even dark photos produce visible pillar color. */
+  filter: blur(40px) saturate(1.6) brightness(0.6) contrast(1.05);
+  transform: scale(1.25);
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+/* Sharp centered subject — sits above the blur */
+.card__portrait-sharp {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  transition: transform 0.9s var(--ease);
+}
+/* Hover lift transfers from the container to the sharp layer for a subtle push-in */
+.card--stallion:hover .card__portrait-sharp { transform: scale(1.02); }
+/* Seat label sits on top of both photo layers */
+.card__portrait > .card__seat { position: relative; z-index: 2; }
 .card__portrait--empty {
   background: repeating-linear-gradient(45deg,
     rgba(200,155,63,0.03) 0 12px,
