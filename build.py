@@ -57,7 +57,7 @@ def head(title, desc, page):
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="stylesheet" href="assets/css/style.css?v=2026080133">
+<link rel="stylesheet" href="assets/css/style.css?v=2026080134">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -156,7 +156,7 @@ FOOTER = '''</main>
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=2026080133" defer></script>
+<script src="assets/js/site.js?v=2026080134" defer></script>
 </body>
 </html>'''
 
@@ -1172,9 +1172,6 @@ stallions = head(
           Twenty sires.<br><em>One vault.</em>
           <span class="rip">The Morgan Stakes Ledger</span>
         </h1>
-        <p class="sh-lede">
-          Twenty permanent seats. $15,000 a year, in perpetuity. Every foal by a Vaulted sire is eligible to win a share of a $1,000,000 target purse &mdash; and a 5% nominator fee that pays for the sire&rsquo;s entire career.
-        </p>
         <div class="sh-cta-row">
           <a class="sh-btn sh-btn--primary" href="nominate.html">Claim a Seat &rarr;</a>
           <a class="sh-btn" href="#vault">View Full Register</a>

@@ -1767,6 +1767,7 @@ body:has(.stallion-hero) .nav {
 .sh-cta-row {
   display: flex; gap: 0.85rem;
   flex-wrap: wrap;
+  margin-top: 1.75rem;
 }
 .sh-btn {
   font-family: var(--sh-mono);
