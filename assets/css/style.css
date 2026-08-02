@@ -1998,6 +1998,6 @@ body:has(.stallion-hero) .nav {
   .sh-ticker--bottom .sh-ticker__inner { animation-duration: 18s; }
 }
 @media (max-width: 520px) {
-  .sh-ticker__inner { animation-duration: 10s; }
-  .sh-ticker--bottom .sh-ticker__inner { animation-duration: 13s; }
+  .sh-ticker__inner { animation-duration: 7s; }
+  .sh-ticker--bottom .sh-ticker__inner { animation-duration: 9s; }
 }
