@@ -1611,7 +1611,7 @@ body:has(.stallion-hero) .nav {
   border-bottom-color: rgba(200,155,63,0.15);
 }
 .stallion-hero {
-  padding-top: 4.5rem;
+  padding-top: 4.2rem;
   --sh-bg: #050912;
   --sh-bg-2: #020509;
   --sh-brass: #C89B3F;
@@ -1688,7 +1688,7 @@ body:has(.stallion-hero) .nav {
   position: relative; z-index: 2;
   flex: 1;
   display: flex; align-items: center;
-  padding: clamp(1rem, 2vw, 1.5rem) 0;
+  padding: clamp(0.75rem, 1.5vw, 1.25rem) 0;
 }
 .stallion-hero__grid {
   max-width: 1400px; margin: 0 auto;
@@ -1697,7 +1697,7 @@ body:has(.stallion-hero) .nav {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: clamp(2rem, 4vw, 3.5rem);
-  align-items: center;
+  align-items: start;
 }
 .sh-badge-row {
   display: flex; gap: 0.75rem; align-items: center;
@@ -1746,6 +1746,14 @@ body:has(.stallion-hero) .nav {
   margin-bottom: 1rem;
 }
 .sh-title em { color: var(--sh-brass); font-style: italic; }
+.sh-title__caps {
+  text-transform: uppercase;
+  font-family: 'Archivo Black', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.78em;
+  letter-spacing: -0.005em;
+  color: var(--sh-cream);
+}
 .sh-title .rip {
   display: block;
   color: var(--sh-brass-hot);
