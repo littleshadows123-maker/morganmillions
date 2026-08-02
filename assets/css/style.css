@@ -1994,5 +1994,10 @@ body:has(.stallion-hero) .nav {
   .sh-agg__inner { grid-template-columns: repeat(2, 1fr); }
   .sh-agg__cell:nth-child(2) { border-right: none; }
   .sh-title { font-size: clamp(2.4rem, 10vw, 4rem); }
-  .sh-ticker__inner { padding-left: 180px; }
+  .sh-ticker__inner { padding-left: 180px; animation-duration: 14s; }
+  .sh-ticker--bottom .sh-ticker__inner { animation-duration: 18s; }
+}
+@media (max-width: 520px) {
+  .sh-ticker__inner { animation-duration: 10s; }
+  .sh-ticker--bottom .sh-ticker__inner { animation-duration: 13s; }
 }
