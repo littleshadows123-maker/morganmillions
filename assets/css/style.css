@@ -2001,3 +2001,249 @@ body:has(.stallion-hero) .nav {
   .sh-ticker__inner { animation-duration: 7s; }
   .sh-ticker--bottom .sh-ticker__inner { animation-duration: 9s; }
 }
+
+/* ============================================================
+   CLAIM A SEAT — inquiry form styles (terminal-aesthetic)
+   ============================================================ */
+.claim-hero {
+  background: #050912;
+  color: #F5EFE1;
+  padding: 5.5rem 0 3.5rem;
+  position: relative;
+  border-bottom: 1px solid rgba(200,155,63,0.2);
+}
+.claim-hero__inner { max-width: 1100px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 5rem); }
+.claim-hero__eyebrow {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #E8B856;
+  margin-bottom: 1.25rem;
+  display: inline-flex; gap: 0.6rem; align-items: center;
+}
+.claim-hero__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 12px rgba(74,222,128,0.7);
+  animation: sh-pulse 1.4s ease-in-out infinite;
+}
+.claim-hero__title {
+  font-family: 'Archivo Black', 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+  line-height: 1;
+  color: #F5EFE1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+.claim-hero__title em {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: #C89B3F;
+  text-transform: none;
+  font-size: 0.7em;
+  margin-top: 0.3rem;
+  letter-spacing: -0.01em;
+}
+.claim-hero__lede {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.55;
+  color: rgba(245,239,225,0.82);
+  max-width: 640px;
+  margin-bottom: 2rem;
+}
+.claim-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(200,155,63,0.22);
+  border-bottom: 1px solid rgba(200,155,63,0.22);
+  margin-top: 2rem;
+}
+.claim-fact {
+  padding: 1.1rem 1.35rem;
+  border-right: 1px solid rgba(200,155,63,0.15);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+.claim-fact:last-child { border-right: none; }
+.claim-fact .k {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,239,225,0.5);
+  margin-bottom: 0.4rem;
+}
+.claim-fact .v {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #E8B856;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+.claim-fact .v.green { color: #4ade80; }
+.claim-fact .v.small { font-size: 0.95rem; color: rgba(245,239,225,0.9); font-weight: 500; }
+
+.claim-body {
+  background: #F7F6F2;
+  padding: 4rem 0 5rem;
+}
+.claim-body__inner {
+  max-width: 1100px; margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 5rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.claim-body__col h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  line-height: 1.15;
+  color: #28251D;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.015em;
+}
+.claim-body__col h3 {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7A6423;
+  margin: 2rem 0 0.85rem;
+}
+.claim-body__col p { color: #3d382c; line-height: 1.65; margin-bottom: 1rem; }
+.claim-list { list-style: none; padding: 0; margin: 0.5rem 0 0; }
+.claim-list li {
+  padding: 0.55rem 0 0.55rem 1.4rem;
+  position: relative;
+  border-bottom: 1px solid rgba(200,155,63,0.15);
+  color: #3d382c;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+.claim-list li::before {
+  content: "▸";
+  color: #C89B3F;
+  position: absolute;
+  left: 0.15rem;
+  top: 0.55rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+.claim-list li:last-child { border-bottom: none; }
+
+/* Form */
+.claim-form {
+  background: #050912;
+  color: #F5EFE1;
+  padding: 2.25rem 2rem;
+  border: 1px solid rgba(200,155,63,0.35);
+  position: relative;
+}
+.claim-form::before {
+  content: "SEAT_INQUIRY.form";
+  position: absolute;
+  top: -8px; left: 1.2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  color: #E8B856;
+  background: #050912;
+  padding: 0 0.55rem;
+}
+.claim-form h2 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.4rem;
+  color: #F5EFE1;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.claim-form__sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,239,225,0.6);
+  margin-bottom: 1.75rem;
+}
+.claim-field { margin-bottom: 1.15rem; }
+.claim-field label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,239,225,0.62);
+  margin-bottom: 0.4rem;
+}
+.claim-field input,
+.claim-field textarea,
+.claim-field select {
+  width: 100%;
+  background: rgba(2,5,9,0.7);
+  border: 1px solid rgba(200,155,63,0.28);
+  color: #F5EFE1;
+  padding: 0.75rem 0.9rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.95rem;
+  border-radius: 0;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+.claim-field textarea { min-height: 120px; resize: vertical; font-family: 'Inter', system-ui, sans-serif; }
+.claim-field input:focus,
+.claim-field textarea:focus,
+.claim-field select:focus {
+  border-color: #E8B856;
+  box-shadow: 0 0 0 2px rgba(232,184,86,0.18);
+}
+.claim-field input::placeholder,
+.claim-field textarea::placeholder { color: rgba(245,239,225,0.35); }
+.claim-form__submit {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: #E8B856;
+  color: #050912;
+  border: 1px solid #E8B856;
+  padding: 0.85rem 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 160ms ease, transform 100ms ease;
+  margin-top: 0.75rem;
+  width: 100%;
+  justify-content: center;
+}
+.claim-form__submit:hover { background: #C89B3F; }
+.claim-form__submit:active { transform: translateY(1px); }
+.claim-form__note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,239,225,0.5);
+  margin-top: 1rem;
+  text-align: center;
+}
+.claim-form__note a { color: #E8B856; text-decoration: none; }
+.claim-form__note a:hover { text-decoration: underline; }
+
+@media (max-width: 900px) {
+  .claim-body__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .claim-facts { grid-template-columns: repeat(2, 1fr); }
+  .claim-fact:nth-child(2) { border-right: none; }
+  .claim-fact:nth-child(1), .claim-fact:nth-child(2) { border-bottom: 1px solid rgba(200,155,63,0.15); }
+}
+@media (max-width: 520px) {
+  .claim-hero { padding: 4rem 0 2.5rem; }
+  .claim-facts { grid-template-columns: 1fr; }
+  .claim-fact { border-right: none; border-bottom: 1px solid rgba(200,155,63,0.15); }
+  .claim-fact:last-child { border-bottom: none; }
+}

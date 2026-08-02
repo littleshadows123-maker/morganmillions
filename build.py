@@ -57,7 +57,7 @@ def head(title, desc, page):
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="stylesheet" href="assets/css/style.css?v=2026080138">
+<link rel="stylesheet" href="assets/css/style.css?v=2026080139">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -156,7 +156,7 @@ FOOTER = '''</main>
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=2026080138" defer></script>
+<script src="assets/js/site.js?v=2026080139" defer></script>
 </body>
 </html>'''
 
@@ -832,6 +832,114 @@ crown_page = (
     </div>
   </div>
 </section>
+''' + FOOTER
+)
+
+# ---------------------------------------------------------------- Claim a Seat
+nominate_page = (
+    head("Claim a Seat &mdash; Morgan Millions",
+         "Inquire about a Vaulted Sire seat. $15,000/year, one of twenty. Nominators earn 5% of every foal placing.",
+         "nominate.html")
+    + '''
+<section class="claim-hero">
+  <div class="claim-hero__inner">
+    <div class="claim-hero__eyebrow"><span class="claim-hero__dot"></span>Vault Access &middot; Cycle 2027</div>
+    <h1 class="claim-hero__title">Claim a Seat.<em>Twenty sires. Ten open.</em></h1>
+    <p class="claim-hero__lede">Every foal by a Vaulted sire is eligible for a share of a $1,000,000 target purse and a 5% nominator fee. Seats are $15,000 a year, one of twenty, and they don&rsquo;t come open often.</p>
+    <div class="claim-facts">
+      <div class="claim-fact"><div class="k">Seat Rate</div><div class="v green">$15,000&thinsp;/&thinsp;yr</div></div>
+      <div class="claim-fact"><div class="k">Target Purse</div><div class="v">$1,000,000</div></div>
+      <div class="claim-fact"><div class="k">Nominator Fee</div><div class="v">5%</div></div>
+      <div class="claim-fact"><div class="k">Inaugural</div><div class="v small">Oct 6&ndash;8, 2027</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="claim-body">
+  <div class="claim-body__inner">
+    <div class="claim-body__col">
+      <h2>What a seat is.</h2>
+      <p>Twenty sire seats. Each seat is a permanent slot in the Vault &mdash; a $15,000 annual nomination that puts every foal by that sire into the Morgan Millions ledger for as long as the seat is held.</p>
+      <h3>What the seat gets you</h3>
+      <ul class="claim-list">
+        <li>Every foal by your Vaulted sire is eligible for a share of the $1,000,000 target purse.</li>
+        <li>A 5% nominator fee on every placing your foals earn &mdash; the seat can pay for itself and then some.</li>
+        <li>Right of first refusal on the seat in perpetuity, so long as annual dues are current.</li>
+        <li>Priority booking and preferred stallion positioning at the inaugural event.</li>
+      </ul>
+      <h3>How placement works</h3>
+      <p>Class purses roll up under an 85 / 10 / 5 split: 85% to the foal owner, 10% to the trainer, 5% to the nominator. Four earners. One nomination.</p>
+      <h3>The event</h3>
+      <p>Target market Oklahoma City, October 6&ndash;8, 2027 (venue pending). Seven classes across the weekend, plus a $105,000 Crown Purse bonus layered on top.</p>
+    </div>
+
+    <div class="claim-body__col">
+      <form class="claim-form" id="seat-inquiry" onsubmit="return sendSeatInquiry(event)">
+        <h2>Request a Seat</h2>
+        <p class="claim-form__sub">Response within 48 hours &middot; Nominator vetting confidential</p>
+
+        <div class="claim-field">
+          <label for="si-name">Your Name</label>
+          <input type="text" id="si-name" name="name" required placeholder="Full name">
+        </div>
+        <div class="claim-field">
+          <label for="si-email">Email</label>
+          <input type="email" id="si-email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="claim-field">
+          <label for="si-phone">Phone</label>
+          <input type="tel" id="si-phone" name="phone" placeholder="(optional)">
+        </div>
+        <div class="claim-field">
+          <label for="si-stallion">Stallion of Interest</label>
+          <input type="text" id="si-stallion" name="stallion" placeholder="Sire name (if known)">
+        </div>
+        <div class="claim-field">
+          <label for="si-role">Your Role</label>
+          <select id="si-role" name="role">
+            <option value="Stallion Owner">Stallion Owner</option>
+            <option value="Breeder">Breeder</option>
+            <option value="Investor / Syndicate">Investor / Syndicate</option>
+            <option value="Trainer">Trainer</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="claim-field">
+          <label for="si-message">Message</label>
+          <textarea id="si-message" name="message" placeholder="Which seat interests you? Any questions about the program?"></textarea>
+        </div>
+        <button type="submit" class="claim-form__submit">Send Inquiry &rarr;</button>
+        <p class="claim-form__note">Or email us directly: <a href="mailto:Morganmillions.org@gmail.com">Morganmillions.org@gmail.com</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+function sendSeatInquiry(e) {
+  e.preventDefault();
+  var name    = document.getElementById('si-name').value.trim();
+  var email   = document.getElementById('si-email').value.trim();
+  var phone   = document.getElementById('si-phone').value.trim();
+  var stall   = document.getElementById('si-stallion').value.trim();
+  var role    = document.getElementById('si-role').value;
+  var msg     = document.getElementById('si-message').value.trim();
+  var subject = 'Vaulted Seat Inquiry \u2014 ' + name;
+  var body    = 'SEAT INQUIRY \u2014 MORGAN MILLIONS' +
+                '\n\nName: '   + name +
+                '\nEmail: '    + email +
+                '\nPhone: '    + phone +
+                '\nStallion: ' + stall +
+                '\nRole: '     + role +
+                '\n\nMessage:\n' + msg +
+                '\n\n\u2014 Submitted from morganmillions.org';
+  var href = 'mailto:Morganmillions.org@gmail.com' +
+             '?subject=' + encodeURIComponent(subject) +
+             '&body='    + encodeURIComponent(body);
+  window.location.href = href;
+  return false;
+}
+</script>
 ''' + FOOTER
 )
 
@@ -1518,9 +1626,10 @@ FAVICON = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#
 (ROOT / "crown.html").write_text(crown_page, encoding="utf-8")
 (ROOT / "bridge.html").write_text(bridge_page, encoding="utf-8")
 (ROOT / "nomination.html").write_text(nomination_page, encoding="utf-8")
+(ROOT / "nominate.html").write_text(nominate_page, encoding="utf-8")
 (ROOT / "for-trainers.html").write_text(for_trainers_page, encoding="utf-8")
 (ROOT / "governance.html").write_text(governance_page, encoding="utf-8")
 (ROOT / "stallions.html").write_text(stallions, encoding="utf-8")
 (ROOT / "event.html").write_text(event, encoding="utf-8")
 (ROOT / "assets" / "img" / "favicon.svg").write_text(FAVICON, encoding="utf-8")
-print("built 10 pages")
+print("built 11 pages")
