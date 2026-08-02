@@ -57,7 +57,7 @@ def head(title, desc, page):
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="stylesheet" href="assets/css/style.css?v=2026080139">
+<link rel="stylesheet" href="assets/css/style.css?v=2026080140">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -156,7 +156,7 @@ FOOTER = '''</main>
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=2026080139" defer></script>
+<script src="assets/js/site.js?v=2026080140" defer></script>
 </body>
 </html>'''
 
@@ -845,7 +845,7 @@ nominate_page = (
   <div class="claim-hero__inner">
     <div class="claim-hero__eyebrow"><span class="claim-hero__dot"></span>Vault Access &middot; Cycle 2027</div>
     <h1 class="claim-hero__title">Claim a Seat.<em>Twenty sires. Ten open.</em></h1>
-    <p class="claim-hero__lede">Every foal by a Vaulted sire is eligible for a share of a $1,000,000 target purse and a 5% nominator fee. Seats are $15,000 a year, one of twenty, and they don&rsquo;t come open often.</p>
+    <p class="claim-hero__lede">Every foal by a Vaulted sire is eligible for a share of a $1,000,000 target purse and a 5% nominator fee. Seats are $15,000 a year, one of twenty.</p>
     <div class="claim-facts">
       <div class="claim-fact"><div class="k">Seat Rate</div><div class="v green">$15,000&thinsp;/&thinsp;yr</div></div>
       <div class="claim-fact"><div class="k">Target Purse</div><div class="v">$1,000,000</div></div>
