@@ -57,7 +57,7 @@ def head(title, desc, page):
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="stylesheet" href="assets/css/style.css?v=2026080141">
+<link rel="stylesheet" href="assets/css/style.css?v=2026080142">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -156,7 +156,7 @@ FOOTER = '''</main>
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=2026080141" defer></script>
+<script src="assets/js/site.js?v=2026080142" defer></script>
 </body>
 </html>'''
 
@@ -874,7 +874,7 @@ nominate_page = (
     </div>
 
     <div class="claim-body__col">
-      <form class="claim-form" id="seat-inquiry" onsubmit="return sendSeatInquiry(event)">
+      <form class="claim-form" id="seat-inquiry" action="https://formspree.io/f/xojgoyeo" method="POST">
         <h2>Request a Seat</h2>
         <p class="claim-form__sub">Response within 48 hours &middot; Nominator vetting confidential</p>
 
@@ -908,37 +908,57 @@ nominate_page = (
           <label for="si-message">Message</label>
           <textarea id="si-message" name="message" placeholder="Which seat interests you? Any questions about the program?"></textarea>
         </div>
-        <button type="submit" class="claim-form__submit">Send Inquiry &rarr;</button>
-        <p class="claim-form__note">Or email us directly: <a href="mailto:Morganmillions.org@gmail.com">Morganmillions.org@gmail.com</a></p>
+        <input type="hidden" name="_subject" value="Vaulted Seat Inquiry \u2014 Morgan Millions">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit" class="claim-form__submit" id="seat-submit">Send Inquiry &rarr;</button>
+        <p class="claim-form__note" id="seat-status">Or email us directly: <a href="mailto:Morganmillions.org@gmail.com">Morganmillions.org@gmail.com</a></p>
       </form>
+      <div class="claim-form__success" id="seat-success" hidden>
+        <div class="claim-form__success-code">TRANSMISSION_RECEIVED</div>
+        <div class="claim-form__success-title">Inquiry logged.</div>
+        <div class="claim-form__success-body">We&rsquo;ll respond within 48 hours. Check your inbox (and spam folder) for confirmation.</div>
+      </div>
     </div>
   </div>
 </section>
 
 <script>
-function sendSeatInquiry(e) {
-  e.preventDefault();
-  var name    = document.getElementById('si-name').value.trim();
-  var email   = document.getElementById('si-email').value.trim();
-  var phone   = document.getElementById('si-phone').value.trim();
-  var stall   = document.getElementById('si-stallion').value.trim();
-  var role    = document.getElementById('si-role').value;
-  var msg     = document.getElementById('si-message').value.trim();
-  var subject = 'Vaulted Seat Inquiry \u2014 ' + name;
-  var body    = 'SEAT INQUIRY \u2014 MORGAN MILLIONS' +
-                '\n\nName: '   + name +
-                '\nEmail: '    + email +
-                '\nPhone: '    + phone +
-                '\nStallion: ' + stall +
-                '\nRole: '     + role +
-                '\n\nMessage:\n' + msg +
-                '\n\n\u2014 Submitted from morganmillions.org';
-  var href = 'mailto:Morganmillions.org@gmail.com' +
-             '?subject=' + encodeURIComponent(subject) +
-             '&body='    + encodeURIComponent(body);
-  window.location.href = href;
-  return false;
-}
+(function(){
+  var form    = document.getElementById('seat-inquiry');
+  var btn     = document.getElementById('seat-submit');
+  var status  = document.getElementById('seat-status');
+  var success = document.getElementById('seat-success');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'TRANSMITTING\u2026';
+    status.innerHTML = '';
+    var data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      if (res.ok) {
+        form.style.display = 'none';
+        success.hidden = false;
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        res.json().then(function(d){
+          var errMsg = (d.errors && d.errors.length) ? d.errors.map(function(x){return x.message;}).join(', ') : 'Submission failed';
+          status.innerHTML = '<span style="color:#ff3d3d">\u2716 ' + errMsg + '</span> \u2014 email <a href="mailto:Morganmillions.org@gmail.com">Morganmillions.org@gmail.com</a>';
+          btn.disabled = false;
+          btn.innerHTML = 'Send Inquiry \u2192';
+        });
+      }
+    }).catch(function(){
+      status.innerHTML = '<span style="color:#ff3d3d">\u2716 Network error</span> \u2014 email <a href="mailto:Morganmillions.org@gmail.com">Morganmillions.org@gmail.com</a>';
+      btn.disabled = false;
+      btn.innerHTML = 'Send Inquiry \u2192';
+    });
+  });
+})();
 </script>
 ''' + FOOTER
 )
