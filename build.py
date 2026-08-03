@@ -1128,7 +1128,7 @@ VAULTED = [
         "pedigree": "RL Jackpot \u00d7 FAMS Halleberry Ovation",
         "foaled": None,
         "standing": "Details forthcoming",
-        "image": "assets/img/stallions/extreme-sensation.jpg",
+        "image": "assets/img/stallions/extreme-sensation.jpg?v=2",
         "image_pos": "center center",
     },
     {
@@ -1150,7 +1150,7 @@ VAULTED = [
         "pedigree": "Astronomicallee × So Vain",
         "foaled": None,
         "standing": "By private treaty",
-        "image": "assets/img/stallions/get-busy.jpg",
+        "image": "assets/img/stallions/get-busy.jpg?v=2",
         "image_pos": "center center",
     },
     {
