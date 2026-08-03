@@ -248,7 +248,7 @@ CLASSES = [
     ("Pleasure Driving", "Two-Year-Old Stakes", "$250,000"),
     ("Park Harness", "Two-Year-Old Stakes", "$250,000"),
     ("Pleasure Driving", "Three &amp; Four-Year-Old Stakes", "$100,000"),
-    ("Park Harness", "Three &amp; Four-Year-Old Stakes", "$100,000"),
+    ("Park Saddle", "Three &amp; Four-Year-Old Stakes", "$100,000"),
     ("Hunter", "Three &amp; Four-Year-Old Stakes", "$100,000"),
     ("Western", "Three &amp; Four-Year-Old Stakes", "$100,000"),
     ("Road Horse", "Three &amp; Four-Year-Old Stakes", "$100,000"),
@@ -317,7 +317,7 @@ CLASSES_SECTION = f'''
       </div>
       <div class="def">
         <h3>Three &amp; Four-Year-Old Stakes</h3>
-        <p>Five classes at $100,000. Pleasure Driving, Park Harness, Hunter, Western, Road Horse.</p>
+        <p>Five classes at $100,000. Pleasure Driving, Park Saddle, Hunter, Western, Road Horse.</p>
       </div>
     </div>
   </div>
@@ -1561,7 +1561,7 @@ event = head(
           <li>Two-Year-Old Pleasure Driving</li>
           <li>Two-Year-Old Park Harness</li>
           <li>3&amp;4-Year-Old Pleasure Driving</li>
-          <li>3&amp;4-Year-Old Park Harness</li>
+          <li>3&amp;4-Year-Old Park Saddle</li>
           <li>3&amp;4-Year-Old Hunter</li>
           <li>3&amp;4-Year-Old Western</li>
           <li>3&amp;4-Year-Old Road Horse</li>
