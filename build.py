@@ -1422,7 +1422,7 @@ stallions = head(
   <div class="wrap">
     <p class="eyebrow">The Vault</p>
     <h2 class="h-section reveal">Seats 01 &ndash; 20</h2>
-    <p class="figure-caption reveal" style="margin-top:0.75rem">Eight announced. Twelve to come.</p>
+    <p class="figure-caption reveal" style="margin-top:0.75rem">Nine announced. Eleven to come.</p>
     <div class="seats reveal" style="margin-top:3rem">
 {seat_grid}
     </div>
