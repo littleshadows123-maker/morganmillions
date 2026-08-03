@@ -2002,6 +2002,14 @@ body:has(.stallion-hero) .nav {
   .sh-ticker--bottom .sh-ticker__inner { animation-duration: 9s; }
 }
 
+/* Event page — bronze statue hero positioning */
+.pagehero--bronze .pagehero__media img {
+  object-position: center 32%;
+}
+@media (max-width: 720px) {
+  .pagehero--bronze .pagehero__media img { object-position: center 28%; }
+}
+
 /* ============================================================
    CLAIM A SEAT — inquiry form styles (terminal-aesthetic)
    ============================================================ */

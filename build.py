@@ -57,7 +57,7 @@ def head(title, desc, page):
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="stylesheet" href="assets/css/style.css?v=2026080142">
+<link rel="stylesheet" href="assets/css/style.css?v=2026080343">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -156,7 +156,7 @@ FOOTER = '''</main>
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=2026080142" defer></script>
+<script src="assets/js/site.js?v=2026080343" defer></script>
 </body>
 </html>'''
 
@@ -1525,9 +1525,9 @@ event = head(
     "Three days planned in Oklahoma City: eliminations, the Auction Crown, and finals night with the $105,000 "
     "Crown Purse. October 6–8, 2027. Venue pending.",
     "event.html") + f'''
-<section class="pagehero">
+<section class="pagehero pagehero--bronze">
   <div class="pagehero__media">
-    <img src="assets/img/hero-d-arena.jpg" alt="A grand equestrian competition arena at night with warm amber stadium lights and deep burgundy velvet drapes" fetchpriority="high">
+    <img src="assets/img/hero-event-bronze.jpg" alt="A bronze Morgan horse statue standing proud against a brick and glass modern building" fetchpriority="high">
   </div>
   <div class="pagehero__scrim"></div>
   <div class="pagehero__inner">
