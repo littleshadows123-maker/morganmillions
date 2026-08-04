@@ -284,6 +284,82 @@
     });
   }
 
+  /* ---------- Placings panel toggle ---------- */
+  (function initPlacingsPanels() {
+    var panels = {
+      "2yo": document.getElementById("placings-2yo"),
+      "34yo": document.getElementById("placings-34yo")
+    };
+    if (!panels["2yo"] && !panels["34yo"]) return;
+
+    function allButtons() {
+      return document.querySelectorAll(".purse-btn[data-placings]");
+    }
+
+    function closeAll() {
+      Object.keys(panels).forEach(function (k) {
+        if (panels[k]) panels[k].setAttribute("hidden", "");
+      });
+      Array.prototype.forEach.call(allButtons(), function (b) {
+        b.setAttribute("aria-expanded", "false");
+      });
+    }
+
+    function openPanel(key, triggerBtn) {
+      var panel = panels[key];
+      if (!panel) return;
+      // Close the other panel if it's open
+      Object.keys(panels).forEach(function (k) {
+        if (k !== key && panels[k]) panels[k].setAttribute("hidden", "");
+      });
+      panel.removeAttribute("hidden");
+      // Update aria-expanded on all matching buttons for this purse tier
+      Array.prototype.forEach.call(allButtons(), function (b) {
+        b.setAttribute("aria-expanded", b.getAttribute("data-placings") === key ? "true" : "false");
+      });
+      // Restart the CSS entry animation on re-open
+      panel.style.animation = "none";
+      // Force reflow
+      void panel.offsetWidth;
+      panel.style.animation = "";
+      // Smoothly scroll the panel into view — only if it isn't already fully visible
+      var rect = panel.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.top < 80 || rect.top > vh - 200) {
+        panel.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    // Delegated click handler on the classes section
+    document.addEventListener("click", function (evt) {
+      var btn = evt.target.closest(".purse-btn[data-placings]");
+      if (btn) {
+        var key = btn.getAttribute("data-placings");
+        var isOpen = btn.getAttribute("aria-expanded") === "true";
+        if (isOpen) {
+          closeAll();
+        } else {
+          openPanel(key, btn);
+        }
+        return;
+      }
+      var closeBtn = evt.target.closest(".placings-panel__close");
+      if (closeBtn) {
+        closeAll();
+      }
+    });
+
+    // Esc key closes any open panel
+    document.addEventListener("keydown", function (evt) {
+      if (evt.key === "Escape" || evt.keyCode === 27) {
+        var anyOpen = Object.keys(panels).some(function (k) {
+          return panels[k] && !panels[k].hasAttribute("hidden");
+        });
+        if (anyOpen) closeAll();
+      }
+    });
+  })();
+
   // Hero video: respect prefers-reduced-motion
   var heroVideo = document.querySelector(".hero__video");
   if (heroVideo) {

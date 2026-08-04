@@ -734,6 +734,231 @@ table.classes tfoot td.purse.crown-purse {
   font-weight: 500;
 }
 
+/* ---------- Interactive purse buttons & placings panels ---------- */
+
+table.classes td.purse { padding-right: 0; }
+.purse-btn {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0.35rem 0.75rem 0.35rem 1rem;
+  margin: -0.35rem -0.75rem -0.35rem 0;
+  color: var(--brass-light);
+  font-family: var(--display);
+  font-size: inherit;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 200ms ease, color 200ms ease;
+  text-align: right;
+  white-space: nowrap;
+}
+.purse-btn:hover,
+.purse-btn:focus-visible {
+  background: rgba(176, 141, 87, 0.14);
+  color: #f6e7c9;
+  outline: none;
+}
+.purse-btn:focus-visible {
+  box-shadow: 0 0 0 2px rgba(176, 141, 87, 0.55);
+}
+.purse-btn__caret {
+  display: inline-block;
+  font-size: 0.7em;
+  color: var(--brass);
+  transition: transform 220ms ease, color 220ms ease;
+  transform-origin: center;
+}
+.purse-btn[aria-expanded="true"] .purse-btn__caret {
+  transform: translateY(-2px) rotate(180deg);
+  color: var(--brass-light);
+}
+.purse-btn[aria-expanded="true"] {
+  background: rgba(176, 141, 87, 0.16);
+  color: #f6e7c9;
+}
+
+.placings-hint {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245, 241, 232, 0.45);
+  text-align: center;
+}
+
+.placings-panel {
+  margin-top: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: rgba(245, 241, 232, 0.03);
+  border: 1px solid rgba(176, 141, 87, 0.3);
+  border-radius: 4px;
+  animation: placingsSlide 340ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  scroll-margin-top: 100px;
+}
+.placings-panel[hidden] { display: none; }
+@keyframes placingsSlide {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.placings-panel__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+.placings-panel__head .eyebrow { margin-bottom: 0.35rem; }
+.placings-panel__title {
+  font-family: var(--display);
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 500;
+  color: var(--bone);
+  line-height: 1.2;
+  margin: 0;
+}
+.placings-panel__close {
+  appearance: none;
+  background: transparent;
+  border: 1px solid rgba(176, 141, 87, 0.4);
+  color: rgba(245, 241, 232, 0.7);
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+.placings-panel__close:hover,
+.placings-panel__close:focus-visible {
+  background: rgba(176, 141, 87, 0.15);
+  color: var(--brass-light);
+  border-color: var(--brass);
+  outline: none;
+}
+.placings-panel__foot {
+  margin-top: 1.25rem;
+  font-size: 0.8125rem;
+  color: rgba(245, 241, 232, 0.55);
+  font-style: italic;
+  line-height: 1.55;
+}
+
+table.placings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+table.placings-table caption {
+  text-align: left;
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 241, 232, 0.45);
+  padding-bottom: 1rem;
+}
+table.placings-table th,
+table.placings-table td {
+  padding: 0.75rem 0.85rem;
+  border-bottom: 1px solid rgba(176, 141, 87, 0.14);
+}
+table.placings-table th {
+  font-family: var(--body);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 241, 232, 0.5);
+  text-align: left;
+}
+table.placings-table td.name {
+  font-family: var(--display);
+  font-size: 0.9375rem;
+  color: var(--bone);
+  white-space: nowrap;
+}
+table.placings-table td.num {
+  text-align: right;
+  font-family: var(--display);
+  font-size: 0.9375rem;
+  color: var(--bone);
+  white-space: nowrap;
+}
+table.placings-table tbody tr:first-child td.num,
+table.placings-table tbody tr:nth-child(2) td.num {
+  color: var(--brass-light);
+}
+table.placings-table tfoot td {
+  border-top: 1px solid rgba(176, 141, 87, 0.55);
+  border-bottom: 0;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  color: var(--brass-light);
+  font-weight: 500;
+}
+.placings-table__tag {
+  display: inline-block;
+  font-family: var(--body);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brass);
+  border: 1px solid rgba(176, 141, 87, 0.4);
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+@media (max-width: 640px) {
+  table.placings-table {
+    font-size: 0.8125rem;
+  }
+  table.placings-table th,
+  table.placings-table td {
+    padding: 0.6rem 0.45rem;
+  }
+  table.placings-table td.name { font-size: 0.875rem; }
+  table.placings-table td.num { font-size: 0.8125rem; }
+  /* Hide trainer + nominator columns on narrow screens to keep the table readable.
+     The three remaining columns — Place, Placing gross, Horse owner (85%) — are the ones the horse-owner audience cares about most. */
+  table.placings-table th:nth-child(4),
+  table.placings-table th:nth-child(5),
+  table.placings-table td:nth-child(4),
+  table.placings-table td:nth-child(5) { display: none; }
+  .placings-panel__head {
+    /* keep the close button top-right on mobile too, don't stack */
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .placings-panel__title { font-size: 1.35rem; }
+  .placings-panel__foot::before {
+    content: "Trainer (10%) and Nominator (5%) shares apply to every placing above — rotate to landscape or tap on desktop to see the full breakdown. ";
+    display: block;
+    margin-bottom: 0.5rem;
+    color: rgba(245, 241, 232, 0.5);
+    font-style: normal;
+    font-size: 0.75rem;
+  }
+  .placings-table__tag {
+    display: inline-block;
+    margin-left: 0.35rem;
+    font-size: 0.5rem;
+    padding: 0.1rem 0.3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .placings-panel { animation: none; }
+  .purse-btn__caret { transition: none; }
+}
+
 /* ---------- generic definition blocks ---------- */
 
 .deflist { display: grid; gap: clamp(2rem, 4vw, 3rem); }

@@ -57,7 +57,7 @@ def head(title, desc, page):
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="stylesheet" href="assets/css/style.css?v=2026080343">
+<link rel="stylesheet" href="assets/css/style.css?v=2026080401">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -156,7 +156,7 @@ FOOTER = '''</main>
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=2026080343" defer></script>
+<script src="assets/js/site.js?v=2026080401" defer></script>
 </body>
 </html>'''
 
@@ -253,11 +253,15 @@ CLASSES = [
     ("Western", "Three &amp; Four-Year-Old Stakes", "$100,000"),
     ("Road Horse", "Three &amp; Four-Year-Old Stakes", "$100,000"),
 ]
+def _purse_key(purse):
+    # $250,000 -> '2yo', $100,000 -> '34yo'
+    return '2yo' if '250' in purse else '34yo'
+
 rows = "\n".join(
     f'''        <tr>
           <td class="name">{name}</td>
           <td>{div}</td>
-          <td class="purse">{purse}</td>
+          <td class="purse"><button type="button" class="purse-btn" data-placings="{_purse_key(purse)}" aria-expanded="false" aria-controls="placings-{_purse_key(purse)}">{purse}<span class="purse-btn__caret" aria-hidden="true">▾</span></button></td>
         </tr>''' for name, div, purse in CLASSES)
 
 # Reusable page hero — accepts eyebrow, title, subline
@@ -310,6 +314,89 @@ CLASSES_SECTION = f'''
         </tfoot>
       </table>
     </div>
+
+    <p class="placings-hint reveal">Tap any purse figure above to see the full placing-by-placing payout for that class.</p>
+
+    <div class="placings-panel" id="placings-2yo" hidden>
+      <div class="placings-panel__head">
+        <div>
+          <p class="eyebrow">Two-Year-Old Stakes &middot; per class</p>
+          <h3 class="placings-panel__title">How a $250,000 class purse pays out.</h3>
+        </div>
+        <button type="button" class="placings-panel__close" data-close="2yo" aria-label="Close placings breakdown">×</button>
+      </div>
+      <div class="table-wrap">
+        <table class="placings-table">
+          <caption>Every placement paid. 85% to the horse owner, 10% to the trainer, 5% to the nominator. Same math on all ten placings.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Place</th>
+              <th scope="col" style="text-align:right">Placing gross</th>
+              <th scope="col" style="text-align:right">Horse owner (85%)</th>
+              <th scope="col" style="text-align:right">Trainer (10%)</th>
+              <th scope="col" style="text-align:right">Nominator (5%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="name">1st <span class="placings-table__tag">Champion</span></td><td class="num">$100,000</td><td class="num">$85,000</td><td class="num">$10,000</td><td class="num">$5,000</td></tr>
+            <tr><td class="name">2nd <span class="placings-table__tag">Reserve</span></td><td class="num">$50,000</td><td class="num">$42,500</td><td class="num">$5,000</td><td class="num">$2,500</td></tr>
+            <tr><td class="name">3rd</td><td class="num">$32,000</td><td class="num">$27,200</td><td class="num">$3,200</td><td class="num">$1,600</td></tr>
+            <tr><td class="name">4th</td><td class="num">$25,000</td><td class="num">$21,250</td><td class="num">$2,500</td><td class="num">$1,250</td></tr>
+            <tr><td class="name">5th</td><td class="num">$15,000</td><td class="num">$12,750</td><td class="num">$1,500</td><td class="num">$750</td></tr>
+            <tr><td class="name">6th</td><td class="num">$10,000</td><td class="num">$8,500</td><td class="num">$1,000</td><td class="num">$500</td></tr>
+            <tr><td class="name">7th</td><td class="num">$7,000</td><td class="num">$5,950</td><td class="num">$700</td><td class="num">$350</td></tr>
+            <tr><td class="name">8th</td><td class="num">$5,000</td><td class="num">$4,250</td><td class="num">$500</td><td class="num">$250</td></tr>
+            <tr><td class="name">9th</td><td class="num">$4,000</td><td class="num">$3,400</td><td class="num">$400</td><td class="num">$200</td></tr>
+            <tr><td class="name">10th</td><td class="num">$2,000</td><td class="num">$1,700</td><td class="num">$200</td><td class="num">$100</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td class="name">Totals</td><td class="num">$250,000</td><td class="num">$212,500</td><td class="num">$25,000</td><td class="num">$12,500</td></tr>
+          </tfoot>
+        </table>
+      </div>
+      <p class="placings-panel__foot">Crown Purse pays on top &mdash; separate check from the sire’s Crown Holder. $10,000 to the Champion’s Crown Holder, $5,000 to the Reserve’s Crown Holder. Not deducted from these placings.</p>
+    </div>
+
+    <div class="placings-panel" id="placings-34yo" hidden>
+      <div class="placings-panel__head">
+        <div>
+          <p class="eyebrow">Three &amp; Four-Year-Old Stakes &middot; per class</p>
+          <h3 class="placings-panel__title">How a $100,000 class purse pays out.</h3>
+        </div>
+        <button type="button" class="placings-panel__close" data-close="34yo" aria-label="Close placings breakdown">×</button>
+      </div>
+      <div class="table-wrap">
+        <table class="placings-table">
+          <caption>Every placement paid. 85% to the horse owner, 10% to the trainer, 5% to the nominator. Same math on all ten placings.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Place</th>
+              <th scope="col" style="text-align:right">Placing gross</th>
+              <th scope="col" style="text-align:right">Horse owner (85%)</th>
+              <th scope="col" style="text-align:right">Trainer (10%)</th>
+              <th scope="col" style="text-align:right">Nominator (5%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="name">1st <span class="placings-table__tag">Champion</span></td><td class="num">$40,000</td><td class="num">$34,000</td><td class="num">$4,000</td><td class="num">$2,000</td></tr>
+            <tr><td class="name">2nd <span class="placings-table__tag">Reserve</span></td><td class="num">$20,000</td><td class="num">$17,000</td><td class="num">$2,000</td><td class="num">$1,000</td></tr>
+            <tr><td class="name">3rd</td><td class="num">$12,800</td><td class="num">$10,880</td><td class="num">$1,280</td><td class="num">$640</td></tr>
+            <tr><td class="name">4th</td><td class="num">$10,000</td><td class="num">$8,500</td><td class="num">$1,000</td><td class="num">$500</td></tr>
+            <tr><td class="name">5th</td><td class="num">$6,000</td><td class="num">$5,100</td><td class="num">$600</td><td class="num">$300</td></tr>
+            <tr><td class="name">6th</td><td class="num">$4,000</td><td class="num">$3,400</td><td class="num">$400</td><td class="num">$200</td></tr>
+            <tr><td class="name">7th</td><td class="num">$2,800</td><td class="num">$2,380</td><td class="num">$280</td><td class="num">$140</td></tr>
+            <tr><td class="name">8th</td><td class="num">$2,000</td><td class="num">$1,700</td><td class="num">$200</td><td class="num">$100</td></tr>
+            <tr><td class="name">9th</td><td class="num">$1,600</td><td class="num">$1,360</td><td class="num">$160</td><td class="num">$80</td></tr>
+            <tr><td class="name">10th</td><td class="num">$800</td><td class="num">$680</td><td class="num">$80</td><td class="num">$40</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td class="name">Totals</td><td class="num">$100,000</td><td class="num">$85,000</td><td class="num">$10,000</td><td class="num">$5,000</td></tr>
+          </tfoot>
+        </table>
+      </div>
+      <p class="placings-panel__foot">Crown Purse pays on top &mdash; separate check from the sire’s Crown Holder. $10,000 to the Champion’s Crown Holder, $5,000 to the Reserve’s Crown Holder. Not deducted from these placings.</p>
+    </div>
+
     <div class="deflist deflist--2 reveal" style="margin-top:clamp(3rem,6vw,4.5rem)">
       <div class="def">
         <h3>Two-Year-Old Stakes</h3>
