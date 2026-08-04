@@ -558,7 +558,7 @@ vault_page = (
     <p class="eyebrow reveal">What the Vaulted seat earns you</p>
     <div class="reveal" style="margin-top:1rem">
       <ul style="padding-left:1.25rem;line-height:1.7">
-        <li>Career-long <strong>5% nominator fee</strong> on every money-winning offspring &mdash; every placing, every year, the entire competitive career. Structured as part of the placing split: <strong>85% foal owner &middot; 10% trainer &middot; 5% nominator</strong>, paid out of the $1,000,000 target purse.</li>
+        <li>Career-long <strong>5% nominator fee</strong> on every money-winning offspring &mdash; every placing, every year, the entire competitive career. Structured as part of the placing split: <strong>85% horse owner &middot; 10% trainer &middot; 5% nominator</strong>, paid out of the $1,000,000 target purse.</li>
         <li>Eligibility for every Morgan Millions event, in perpetuity.</li>
         <li>A permanent place in the sire roster of record for the breed.</li>
       </ul>
@@ -619,7 +619,7 @@ vault_page = (
       </div>
       <div>
         <p class="duo__label">Nominator economics</p>
-        <p class="duo__line">Reserve nominators earn the same career-long 5% nominator fee on money-winning offspring &mdash; every placing splits <strong>85 / 10 / 5</strong> across foal owner, trainer, and nominator. Reserve is treated the same as Vaulted for revenue-share purposes.</p>
+        <p class="duo__line">Reserve nominators earn the same career-long 5% nominator fee on money-winning offspring &mdash; every placing splits <strong>85 / 10 / 5</strong> across horse owner, trainer, and nominator. Reserve is treated the same as Vaulted for revenue-share purposes.</p>
       </div>
     </div>
   </div>
@@ -818,7 +818,7 @@ crown_page = (
       <ul style="padding-left:1.25rem;line-height:1.7">
         <li><strong>Not paid out of the $1M target purse.</strong> The Crown Purse is a separate $105,000 pool, funded by the Auction Crown ticket sales.</li>
         <li><strong>Not a separate class.</strong> No one enters "the Crown." Any foal that wins a target-purse placing triggers a Crown payout for whoever holds that sire\'s ticket.</li>
-        <li><strong>Not paid to the foal owner.</strong> The class purse (target) pays out in the placing split &mdash; 85% foal owner, 10% trainer, 5% nominator. The Crown Purse pays the ticket holder. Two separate checks from the same Friday-night ceremony.</li>
+        <li><strong>Not paid to the horse owner.</strong> The class purse (target) pays out in the placing split &mdash; 85% horse owner, 10% trainer, 5% nominator. The Crown Purse pays the ticket holder. Two separate checks from the same Friday-night ceremony.</li>
       </ul>
     </div>
   </div>
@@ -868,7 +868,7 @@ nominate_page = (
         <li>Priority booking and preferred stallion positioning at the inaugural event.</li>
       </ul>
       <h3>How placement works</h3>
-      <p>Class purses roll up under an 85 / 10 / 5 split: 85% to the foal owner, 10% to the trainer, 5% to the nominator. Four earners. One nomination.</p>
+      <p>Class purses roll up under an 85 / 10 / 5 split: 85% to the horse owner, 10% to the trainer, 5% to the nominator. Four earners. One nomination.</p>
       <h3>The event</h3>
       <p>Target market Oklahoma City, October 6&ndash;8, 2027 (venue pending). Seven classes across the weekend, plus a $105,000 Crown Purse bonus layered on top.</p>
     </div>
@@ -1010,7 +1010,7 @@ for_trainers_page = (
     <p class="eyebrow">How trainers get paid</p>
     <h2 class="h-section reveal">10% of every placing goes to the trainer.</h2>
     <div class="reveal" style="margin-top:1.75rem">
-      <p class="lede">Every dollar of the $1,000,000 target purse pays out in one split: <strong>85% foal owner &middot; 10% trainer &middot; 5% nominator</strong>. Every placing, every class, every year.</p>
+      <p class="lede">Every dollar of the $1,000,000 target purse pays out in one split: <strong>85% horse owner &middot; 10% trainer &middot; 5% nominator</strong>. Every placing, every class, every year.</p>
     </div>
   </div>
 </section>
@@ -1032,7 +1032,7 @@ for_trainers_page = (
     <div class="reveal" style="margin-top:1.75rem">
       <p class="lede">Champion takes 40% of the class purse: $100,000. That $100,000 splits three ways.</p>
       <ul style="padding-left:1.25rem;line-height:1.9;margin-top:1.5rem">
-        <li><strong>Foal owner:</strong> $85,000</li>
+        <li><strong>Horse owner:</strong> $85,000</li>
         <li><strong>Trainer:</strong> $10,000</li>
         <li><strong>Nominator (Vaulted or Reserve sire owner):</strong> $5,000</li>
       </ul>
@@ -1354,7 +1354,7 @@ stallions = head(
       <span class="sh-ticker__item"><span>Crown Purse / class</span> <span class="money">$15,000</span></span>
       <span class="sh-ticker__item"><span>Trainers, annual</span> <span class="money">$100,000</span></span>
       <span class="sh-ticker__item"><span>Nominators, annual</span> <span class="money">$50,000</span></span>
-      <span class="sh-ticker__item"><span>Foal owners, annual</span> <span class="money">$850,000</span></span>
+      <span class="sh-ticker__item"><span>Horse owners, annual</span> <span class="money">$850,000</span></span>
       <span class="sh-ticker__item"><span>2YO Champion</span> <span class="money">$100,000</span></span>
       <span class="sh-ticker__item"><span>2YO Reserve</span> <span class="money">$50,000</span></span>
       <span class="sh-ticker__item"><span>3-4YO Champion</span> <span class="money">$40,000</span></span>
@@ -1362,7 +1362,7 @@ stallions = head(
       <span class="sh-ticker__item"><span>Crown Purse / class</span> <span class="money">$15,000</span></span>
       <span class="sh-ticker__item"><span>Trainers, annual</span> <span class="money">$100,000</span></span>
       <span class="sh-ticker__item"><span>Nominators, annual</span> <span class="money">$50,000</span></span>
-      <span class="sh-ticker__item"><span>Foal owners, annual</span> <span class="money">$850,000</span></span>
+      <span class="sh-ticker__item"><span>Horse owners, annual</span> <span class="money">$850,000</span></span>
     </div>
   </div>
 </section>
@@ -1397,7 +1397,7 @@ stallions = head(
   <div class="earners__grid">
     <div class="earners__tile">
       <span class="earners__value">85%</span>
-      <span class="earners__role">Foal Owner</span>
+      <span class="earners__role">Horse Owner</span>
       <span class="earners__note">of the class purse</span>
     </div>
     <div class="earners__tile">
