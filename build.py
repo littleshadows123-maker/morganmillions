@@ -1001,7 +1001,7 @@ for_trainers_page = (
 <section class="section on-ink" style="padding-top:clamp(2rem,4vw,3rem);padding-bottom:clamp(2rem,4vw,3rem)">
   <div class="wrap-narrow" style="text-align:center">
     <p class="eyebrow" style="margin-bottom:1.25rem">Ready to nominate your barn&rsquo;s next campaigner?</p>
-    <a class="pill" href="nomination.html">Nominate a foal &rarr;</a>
+    <a class="pill" href="nomination.html">Nominate Your Next Champion &rarr;</a>
   </div>
 </section>
 
@@ -1066,7 +1066,7 @@ for_trainers_page = (
 
 <section class="section on-cream">
   <div class="wrap-narrow" style="text-align:center">
-    <p class="reveal"><a class="pill" href="nomination.html">Nominate a foal &rarr;</a> &nbsp; <a class="pill pill--ghost" href="program.html">Read the full program</a></p>
+    <p class="reveal"><a class="pill" href="nomination.html">Nominate Your Next Champion &rarr;</a> &nbsp; <a class="pill pill--ghost" href="program.html">Read the full program</a></p>
   </div>
 </section>
 ''' + FOOTER
