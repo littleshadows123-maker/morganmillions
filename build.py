@@ -451,11 +451,11 @@ BRIDGE_SECTION = '''
     <div class="duo reveal">
       <div>
         <p class="duo__label">Bridge Open Roster</p>
-        <p class="duo__line">Sires enroll for the 2027-2029 seasons on open terms &mdash; the same nominator economics as a Vaulted seat, without buying the seat itself. When the Vault opens permanently in 2030, the roster sunsets.</p>
+        <p class="duo__line">Sires enroll year by year for the 2027, 2028, 2029, and 2030 events on open terms &mdash; the same nominator economics as a Vaulted seat, without buying the seat itself. Every enrolled year, the sire donates one breeding to that year&rsquo;s Crown Purse Auction and covers his offspring&rsquo;s sire-nom automatically. When the Bridge closes after 2030, the roster sunsets.</p>
       </div>
       <div>
         <p class="duo__label">Guest Pass</p>
-        <p class="duo__line">Individual foals can be nominated in as guests &mdash; whether their sire is elsewhere in the Bridge or never enrolled at all. A clean path for one horse without a roster commitment.</p>
+        <p class="duo__line">$500 per foal, per event year. The path for a foal whose sire is not on the Bridge Open Roster that year &mdash; whether he opted out, never enrolled, or is a stallion still standing but not participating. Guest Pass covers the sire-nom for that one foal, that one year. Vaulted and Reserve offspring never need it &mdash; those tiers cover sire-nom automatically through Bridge 2030.</p>
       </div>
     </div>
   </div>
@@ -753,8 +753,9 @@ vault_page = (
     <p class="eyebrow">One nomination ladder</p>
     <h2 class="h-section reveal">Every foal. No carveouts.</h2>
     <div class="reveal" style="margin-top:1.75rem">
-      <p class="lede">The $500&nbsp;/&nbsp;$500&nbsp;/&nbsp;$500&nbsp;/&nbsp;$1,500 nomination ladder applies to every single foal that wants to compete at Morgan Millions.</p>
+      <p class="lede">A flat <strong>$500 per foal per year for five years</strong> &mdash; weanling through 4YO &mdash; totaling <strong>$2,500</strong> across the full competing window. Sept&nbsp;1 deadline every year.</p>
       <p style="margin-top:1rem">No exemptions for Vaulted donated breedings. No exemptions for Minted auction breedings. No carveouts for Charter holders. One program. One set of rules. Every foal earns its place on the same terms.</p>
+      <p style="margin-top:1rem">Miss a payment after your on-time weanling nomination? A <strong>$5,000 flat reinstatement</strong> brings the horse back on-ledger. Stallion tier fees, by contrast, are non-reinstatable &mdash; miss a Vaulted or Reserve payment and the seat is gone.</p>
       <p style="margin-top:1.5rem"><a class="pill pill--ghost" href="nomination.html">Full nomination detail &rarr;</a></p>
     </div>
   </div>
@@ -1070,6 +1071,14 @@ nomination_page = (
     <div class="reveal" style="margin-top:1.75rem">
       <p class="lede">Every fee, every deadline, every form. Bridge Open Roster terms, Guest Pass terms, and the September&nbsp;1 forward-nomination window that carries the program from 2027 onward.</p>
       <p style="margin-top:1rem">Publishing ahead of the 2026 nomination window. Prize list, entry form, and a fee schedule you can print and sign.</p>
+      <p style="margin-top:2rem" class="eyebrow">The short version</p>
+      <ul style="padding-left:1.25rem;line-height:1.9;margin-top:0.75rem">
+        <li><strong>Foal nomination:</strong> $500 per foal, every year from weanling through 4YO. Five payments, $2,500 total. Sept&nbsp;1 deadline each year.</li>
+        <li><strong>Miss a payment?</strong> $5,000 flat reinstatement, applied uniformly. Stallion tier fees are non-reinstatable.</li>
+        <li><strong>Vaulted / Reserve seats:</strong> $15,000 per year in perpetuity. One of twenty Vaulted seats or two Reserve seats per year. Sept&nbsp;1 deadline.</li>
+        <li><strong>Bridge Open Roster (2027-2030):</strong> Sires enroll year by year. Each enrolled year covers offspring sire-nom automatically and requires one donated breeding to the Crown Purse Auction.</li>
+        <li><strong>Guest Pass (Bridge era only):</strong> $500 per foal per event year, for foals whose sire is not on the Open Roster that year. Applies only 2027-2030. Foal birth years 2023-2028 eligible.</li>
+      </ul>
       <p style="margin-top:2rem">In the meantime, browse the rest of the program.</p>
       <p style="margin-top:1.5rem"><a class="pill pill--ghost" href="program.html">Back to Program overview</a></p>
     </div>
