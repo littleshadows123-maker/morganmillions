@@ -754,7 +754,6 @@ vault_page = (
     <h2 class="h-section reveal">Every foal. No carveouts.</h2>
     <div class="reveal" style="margin-top:1.75rem">
       <p class="lede">A flat <strong>$500 per foal per year for five years</strong> &mdash; weanling through 4YO &mdash; totaling <strong>$2,500</strong> across the full competing window. Two deadlines: <strong>Sept&nbsp;1</strong> for the initial (weanling) nomination, <strong>Jan&nbsp;1</strong> for every sustaining payment after that.</p>
-      <p style="margin-top:1rem">No exemptions for Vaulted donated breedings. No exemptions for Minted auction breedings. No carveouts for Charter holders. One program. One set of rules. Every foal earns its place on the same terms.</p>
       <p style="margin-top:1rem">Miss a payment after your on-time weanling nomination? A <strong>$5,000 flat reinstatement</strong> brings the horse back on-ledger. Stallion tier fees, by contrast, are non-reinstatable &mdash; miss a Vaulted or Reserve payment and the seat is gone.</p>
       <p style="margin-top:1.5rem"><a class="pill pill--ghost" href="nomination.html">Full nomination detail &rarr;</a></p>
     </div>
