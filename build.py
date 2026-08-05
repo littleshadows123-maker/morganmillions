@@ -751,7 +751,7 @@ vault_page = (
 <section class="section on-cream">
   <div class="wrap-narrow">
     <p class="eyebrow">One nomination ladder</p>
-    <h2 class="h-section reveal">Every foal. No carveouts.</h2>
+    <h2 class="h-section reveal">Every foal. One ladder.</h2>
     <div class="reveal" style="margin-top:1.75rem">
       <p class="lede">A flat <strong>$500 per foal per year for five years</strong> &mdash; weanling through 4YO &mdash; totaling <strong>$2,500</strong> across the full competing window. Two deadlines: <strong>Sept&nbsp;1</strong> for the initial (weanling) nomination, <strong>Jan&nbsp;1</strong> for every sustaining payment after that.</p>
       <p style="margin-top:1rem">Miss a payment after your on-time weanling nomination? A <strong>$5,000 flat reinstatement</strong> brings the horse back on-ledger. Stallion tier fees, by contrast, are non-reinstatable &mdash; miss a Vaulted or Reserve payment and the seat is gone.</p>
